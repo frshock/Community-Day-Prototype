@@ -1,19 +1,73 @@
 <html>
     <head>
-        <title>Home</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <title>Big Eats</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
         <link rel="stylesheet" type="text/css" href="/style.css">
     </head>
     <body>
-        <h1>Big Eats without a Big Budget</h1>
-        
-        <div id="floating-panel">
-            <input id="address" type="textbox" value="Toronto">
-            <input id="submit" type="button" value="Geocode">
+
+    <div class="navbar">
+        <div class="logoTest fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large red" href="/">
+                <i class="large material-icons">receipt</i>
+            </a>
         </div>
+    </div>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <a href="/"><img class="logo" src="White-01.png"></a>
+        </div>
+
+        <div class="pitch">
+            <h1>FIND YOUR FIX</h1>
+                <p class="firstPitch">Tired of not knowing where to go for dinner?</p>
+                <p class="firstPitch">Craving Mexican food but you're unfamiliar with the area?</p>
+                <p class="firstPitch">You're in the right place.  Just tells us where you are and we'll do the rest!</p>
+        </div>
+
+        <div id="floating-panel">
+            <input id="address" type="textbox" placeholder="Location">
+            <input id="submit" type="button" value="Search!">
+        </div>
+
         <div id="map">
         </div>
+
+        <div class="salesPitch">
+            <p>Check out reviews, pictures, and ratings for any restaurants near you!</p>
+        </div>
+
+        <div class="row">
+
+            <%for(let i=0; i<9; i++){ %>
+            <div class="results col s4 card hoverable">
+                <div class="resultImages">
+                    <span> <%= resultList[i].name %> </span> 
+                    <img src=<%= resultList[i].image_url %> >
+                    <p class="addressText"><%=resultList[i].location.address1%></p>
+                    <span class="badge"><%= resultList[i].rating %>/5</span>
+                    <div class="fixed-action-btn horizontal">
+                        <a class="btn-floating btn-large red" href="<%=resultList[i].url%>"><i class="large material-icons">open_in_browser</i></a>
+                        <ul>
+                            <li><a class="btn-floating green" href="https://www.yelp.com/writeareview"><i class="material-icons">mode_edit</i></a></li>
+                        </ul>
+                    </div>
+                    <span class="price"><%= resultList[i].price %> </span>
+                    
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </div> 
 
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADzLWjCW2oVO2_LntASWh1yp8KQDZur8I&callback=initMap">
         </script>

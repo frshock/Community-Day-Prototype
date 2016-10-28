@@ -1,4 +1,166 @@
+body{
+    background-color: #eee;
+}
+
+.jumbotron{
+    margin-top: 25px;
+    background-image: url('https://images.unsplash.com/photo-1440427810006-0e4109fd4abe?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=4c44f7fdadd67901485d79169fcb287b');
+    background-size: 100% 100%;
+    height: 550px;
+    width: 100%;
+}
+
+.logo{
+    position: relative;
+    top: 40px;
+    left: 40px;
+    height: 90px;
+    width: 390px;
+}
+
+.logo2 {
+    position: relative;
+    top: 40px;
+    left: 40px;
+    height: 90px;
+    width: 390px;
+}
+
+.container {
+    background-color: #FFFFFF;
+    padding-top: 40px;
+}
+
 #map {
-    width: 800px;
+    display: inline-block;
+    width: 50%;
+    height: 300px;
+}
+
+.fixed-action-btn.horizontal ul{
+    right: 215px;
+}
+
+.searchMap {
+    display: inline-block;
+    width: 100%;
     height: 600px;
+}
+
+.salesPitch {
+    position: absolute;
+    font-size: 22px;
+    font-family: "Raleway", sans-serif;
+    top: 973px;
+    right: 227px;
+    width: 533px;
+    height: 300px;
+    padding-top: 100px;
+    text-align: center;
+    border-top: 5px #eee solid;
+}
+
+.salesPitchVersionDos {
+    position: absolute;
+    font-size: 22px;
+    font-family: "Raleway", sans-serif;
+    top: 703px;
+    right: 290px;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+}
+
+.addressText {
+    font-size: 16px;
+    position: relative;
+    top: -15px;
+    left: 0px;
+    font-family: "Oswald", sans-serif;
+}
+
+.firstPitch {
+    position: relative;
+    text-align: center;
+    left: 12%;
+    font-size: 27px;
+    width: 800px;
+    height: 50px;
+    padding-bottom: 30px;
+    bottom: 25px;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 983px;
+    left: 23%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Raleway','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+#floating-panel2 {
+    position: absolute;
+    top: 625px;
+    left: 23%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Raleway','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.fixed-action-btn {
+    position: relative;
+}
+
+.logoTest{
+    position: fixed;
+    height: 75px;
+    top: 5px;
+    left: 0px;
+}
+
+.results {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+}
+
+.badge {
+    background-color: #eee;
+}
+
+.card span {
+    background-color: #eee;
+    display: block;
+    font-size: 16px;
+    font-family: "Oswald", sans-serif;
+}
+
+.results img {
+    height: 200px;
+    width: 200px;
+}
+
+.navbar{
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    z-index: 99;
+    opacity: .8;
 }
