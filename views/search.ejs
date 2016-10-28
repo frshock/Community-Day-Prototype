@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Big Eats Search</title>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+    <body>
+
+    <div class="navbar">
+         <div class="logoTest fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large red" href="/">
+                <i class="large material-icons">receipt</i>
+            </a>
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <div class="jumbotron">
+            <a href="/"><img src="../White-01.png" class="logo2"></a>
+        </div>
+        <div id="floating-panel2">
+            <input id="address" type="textbox" placeholder="Location">
+            <input id="submit" type="button" value="Geocode">
+        </div>
+
+        <div id="map">
+        </div>
+
+        <div class="salesPitchVersionDos">
+            <p>Hope you found something that interests you, feel free to try another search!</p>
+        </div>
+
+        <div class="row">
+            <%for(let i=0; i<resultList.length; i++){ %>
+            <div class="results col s4 card hoverable">
+                <div class="resultImages">
+                    <span> <%= resultList[i].name %> </span> 
+                    <img src=<%= resultList[i].image_url %> >
+                    <p class="addressText"><%=resultList[i].location.address1%></p>
+                    <span class="badge"><%= resultList[i].rating %>/5</span>
+                    <div class="fixed-action-btn horizontal">
+                        <a class="btn-floating btn-large red" href="<%=resultList[i].url%>"><i class="large material-icons">open_in_browser</i></a>
+                        <ul>
+                            <li><a class="btn-floating green" href="https://www.yelp.com/writeareview"><i class="material-icons">mode_edit</i></a></li>
+                        </ul>
+                    </div>
+                    <span class="price"><%= resultList[i].price %> </span>
+                    
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </div>
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADzLWjCW2oVO2_LntASWh1yp8KQDZur8I&callback=initMap">
+        </script>
+        <script src="../searchFunction.js"></script>
+        <script type="text/javascript">
+            var lati = <%= axisY %>;
+            var long = <%= axisX %>;
+        </script>
+    </body>
+</html>
